@@ -7,8 +7,15 @@
 
 import Foundation
 
-public struct RepositoriesRequest: Encodable {
+public struct RepositoriesRequest {
     
     public let language: String
+    public let sortItem: String
     public let offset: Int
+    
+    public init(language: String, sortItem: String, offset: Int) {
+        self.language = language
+        self.sortItem = sortItem
+        self.offset = offset
+    }
 }

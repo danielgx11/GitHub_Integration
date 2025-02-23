@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol GetPullsUseCaseProtocol {
-    func execute(with request: RepositoryPullsRequest) async throws -> GetPullsUseCaseResponse
+public protocol GetPullsUseCaseProtocol {
+    func execute(with request: RepositoriesRequest) async throws -> GetRepositoriesUseCaseResponse
 }

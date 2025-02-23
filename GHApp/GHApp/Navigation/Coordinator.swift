@@ -7,15 +7,15 @@
 
 import UIKit
 
-protocol CoordinatorDelegate: AnyObject { }
+public protocol CoordinatorDelegate: AnyObject { }
 
-protocol Coordinator: CoordinatorDelegate {
+public protocol Coordinator: CoordinatorDelegate {
     
     var navigationController: UINavigationController { get set }
     
     func start()
 }
 
-extension Coordinator {
+public extension Coordinator {
     func start() { }
 }

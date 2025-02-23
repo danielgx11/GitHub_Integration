@@ -5,17 +5,17 @@
 //  Created by Daniel Gomes Xavier on 19/02/25.
 //
 
-final class GetPullsUseCase {
+public final class GetPullsUseCase {
     let service: ServiceManagerProtocol
     
-    init(service: ServiceManagerProtocol) {
+    public init(service: ServiceManagerProtocol) {
         self.service = service
     }
 }
 
 extension GetPullsUseCase: GetPullsUseCaseProtocol {
     
-    func execute(with request: RepositoryPullsRequest) async throws -> GetPullsUseCaseResponse {
-        try await service.fetchPullsForRepository(with: request)
+    public func execute(with request: RepositoriesRequest) async throws -> GetRepositoriesUseCaseResponse {
+        try await service.fetchRepositories(with: request)
     }
 }

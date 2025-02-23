@@ -16,8 +16,33 @@
 		24620B2A2D66A9D400ED9B64 /* GHAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24620B292D66A9D400ED9B64 /* GHAppUITestsLaunchTests.swift */; };
 		24620B6A2D66B48E00ED9B64 /* Commons in Frameworks */ = {isa = PBXBuildFile; productRef = 24620B692D66B48E00ED9B64 /* Commons */; };
 		24620B6C2D66B48E00ED9B64 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 24620B6B2D66B48E00ED9B64 /* Domain */; };
-		24620B6E2D66B48E00ED9B64 /* Navigation in Frameworks */ = {isa = PBXBuildFile; productRef = 24620B6D2D66B48E00ED9B64 /* Navigation */; };
 		24620B702D66B48E00ED9B64 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 24620B6F2D66B48E00ED9B64 /* Networking */; };
+		24620B732D66B78500ED9B64 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24620B722D66B78500ED9B64 /* HomeView.swift */; };
+		24620B782D66B7A800ED9B64 /* HomeViewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24620B772D66B7A800ED9B64 /* HomeViewEntity.swift */; };
+		24620B7A2D66B7B200ED9B64 /* HomeViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24620B792D66B7B200ED9B64 /* HomeViewFactory.swift */; };
+		24620B7C2D66B7BB00ED9B64 /* HomeViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24620B7B2D66B7BB00ED9B64 /* HomeViewState.swift */; };
+		24620B7E2D66B7C800ED9B64 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24620B7D2D66B7C800ED9B64 /* HomeViewController.swift */; };
+		24620B802D66B7CF00ED9B64 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24620B7F2D66B7CF00ED9B64 /* HomeViewModel.swift */; };
+		24AFA65F2D68006800982AB6 /* RepositoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA65E2D68006800982AB6 /* RepositoryCellView.swift */; };
+		24AFA6612D6807E500982AB6 /* RepositoryCellViewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA6602D6807E500982AB6 /* RepositoryCellViewEntity.swift */; };
+		24AFA6632D68AF6D00982AB6 /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA6622D68AF6D00982AB6 /* HomeProtocols.swift */; };
+		24AFA6662D6962AB00982AB6 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA6652D6962AB00982AB6 /* HomeCoordinator.swift */; };
+		24AFA66B2D69649100982AB6 /* AppCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA6682D69649000982AB6 /* AppCoordinatorFactory.swift */; };
+		24AFA66C2D69649100982AB6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA6692D69649100982AB6 /* Coordinator.swift */; };
+		24AFA66D2D69649100982AB6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA66A2D69649100982AB6 /* AppCoordinator.swift */; };
+		24AFA6702D6BBCEF00982AB6 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA66F2D6BBCEF00982AB6 /* LoadingView.swift */; };
+		24AFA6722D6BBE1F00982AB6 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA6712D6BBE1F00982AB6 /* ErrorView.swift */; };
+		24AFA6762D6BCB5C00982AB6 /* HomeCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA6752D6BCB5C00982AB6 /* HomeCoordinatorSpy.swift */; };
+		24AFA6782D6BCB8A00982AB6 /* HomeViewFactorySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA6772D6BCB8A00982AB6 /* HomeViewFactorySpy.swift */; };
+		24AFA67A2D6BCB9B00982AB6 /* GetPullsUseCaseSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA6792D6BCB9B00982AB6 /* GetPullsUseCaseSpy.swift */; };
+		24AFA67C2D6BCBD500982AB6 /* HomeViewEntityStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA67B2D6BCBD500982AB6 /* HomeViewEntityStub.swift */; };
+		24AFA67E2D6BCC1100982AB6 /* RepositoryCellViewEntityStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA67D2D6BCC1100982AB6 /* RepositoryCellViewEntityStub.swift */; };
+		24AFA6812D6BCD0B00982AB6 /* GetRepositoriesUseCaseResponseStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA6802D6BCD0B00982AB6 /* GetRepositoriesUseCaseResponseStub.swift */; };
+		24AFA6832D6BCDDB00982AB6 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA6822D6BCDDB00982AB6 /* HomeViewModelTests.swift */; };
+		24AFA6882D6BCF6700982AB6 /* HomeViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA6872D6BCF6700982AB6 /* HomeViewControllerSpy.swift */; };
+		24AFA68A2D6BD0BE00982AB6 /* RepositoriesRequestStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA6892D6BD0BE00982AB6 /* RepositoriesRequestStub.swift */; };
+		24AFA68D2D6BD81F00982AB6 /* HomeViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA68C2D6BD81F00982AB6 /* HomeViewControllerFactory.swift */; };
+		24AFA68F2D6BD83F00982AB6 /* HomeViewControllerFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA68E2D6BD83F00982AB6 /* HomeViewControllerFactoryProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +76,33 @@
 		24620B292D66A9D400ED9B64 /* GHAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		24620B642D66B25000ED9B64 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Domain; path = ../../Domain; sourceTree = "<group>"; };
 		24620B652D66B25E00ED9B64 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Networking; path = ../../Networking; sourceTree = "<group>"; };
-		24620B662D66B29600ED9B64 /* Navigation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Navigation; path = ../../Navigation; sourceTree = "<group>"; };
 		24620B672D66B34400ED9B64 /* Commons */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Commons; path = ../../Commons; sourceTree = "<group>"; };
+		24620B722D66B78500ED9B64 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		24620B772D66B7A800ED9B64 /* HomeViewEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewEntity.swift; sourceTree = "<group>"; };
+		24620B792D66B7B200ED9B64 /* HomeViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewFactory.swift; sourceTree = "<group>"; };
+		24620B7B2D66B7BB00ED9B64 /* HomeViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewState.swift; sourceTree = "<group>"; };
+		24620B7D2D66B7C800ED9B64 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		24620B7F2D66B7CF00ED9B64 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		24AFA65E2D68006800982AB6 /* RepositoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellView.swift; sourceTree = "<group>"; };
+		24AFA6602D6807E500982AB6 /* RepositoryCellViewEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellViewEntity.swift; sourceTree = "<group>"; };
+		24AFA6622D68AF6D00982AB6 /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
+		24AFA6652D6962AB00982AB6 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		24AFA6682D69649000982AB6 /* AppCoordinatorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinatorFactory.swift; sourceTree = "<group>"; };
+		24AFA6692D69649100982AB6 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		24AFA66A2D69649100982AB6 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		24AFA66F2D6BBCEF00982AB6 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		24AFA6712D6BBE1F00982AB6 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		24AFA6752D6BCB5C00982AB6 /* HomeCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinatorSpy.swift; sourceTree = "<group>"; };
+		24AFA6772D6BCB8A00982AB6 /* HomeViewFactorySpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewFactorySpy.swift; sourceTree = "<group>"; };
+		24AFA6792D6BCB9B00982AB6 /* GetPullsUseCaseSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPullsUseCaseSpy.swift; sourceTree = "<group>"; };
+		24AFA67B2D6BCBD500982AB6 /* HomeViewEntityStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewEntityStub.swift; sourceTree = "<group>"; };
+		24AFA67D2D6BCC1100982AB6 /* RepositoryCellViewEntityStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellViewEntityStub.swift; sourceTree = "<group>"; };
+		24AFA6802D6BCD0B00982AB6 /* GetRepositoriesUseCaseResponseStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRepositoriesUseCaseResponseStub.swift; sourceTree = "<group>"; };
+		24AFA6822D6BCDDB00982AB6 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		24AFA6872D6BCF6700982AB6 /* HomeViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerSpy.swift; sourceTree = "<group>"; };
+		24AFA6892D6BD0BE00982AB6 /* RepositoriesRequestStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesRequestStub.swift; sourceTree = "<group>"; };
+		24AFA68C2D6BD81F00982AB6 /* HomeViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerFactory.swift; sourceTree = "<group>"; };
+		24AFA68E2D6BD83F00982AB6 /* HomeViewControllerFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerFactoryProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +110,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24620B6E2D66B48E00ED9B64 /* Navigation in Frameworks */,
 				24620B6C2D66B48E00ED9B64 /* Domain in Frameworks */,
 				24620B702D66B48E00ED9B64 /* Networking in Frameworks */,
 				24620B6A2D66B48E00ED9B64 /* Commons in Frameworks */,
@@ -108,8 +157,8 @@
 		24620B052D66A9D100ED9B64 /* GHApp */ = {
 			isa = PBXGroup;
 			children = (
+				24AFA6672D69648600982AB6 /* Navigation */,
 				24620B672D66B34400ED9B64 /* Commons */,
-				24620B662D66B29600ED9B64 /* Navigation */,
 				24620B652D66B25E00ED9B64 /* Networking */,
 				24620B642D66B25000ED9B64 /* Domain */,
 				24620B452D66AE0A00ED9B64 /* SupportingFiles */,
@@ -124,6 +173,7 @@
 		24620B1C2D66A9D400ED9B64 /* GHAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				24AFA6732D6BCB2200982AB6 /* Home */,
 				24620B1D2D66A9D400ED9B64 /* GHAppTests.swift */,
 			);
 			path = GHAppTests;
@@ -141,6 +191,8 @@
 		24620B3A2D66AA0E00ED9B64 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				24AFA66E2D6BBCE400982AB6 /* Components */,
+				24620B712D66B77700ED9B64 /* Home */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -159,6 +211,124 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		24620B712D66B77700ED9B64 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				24AFA68B2D6BD81400982AB6 /* DI */,
+				24AFA6642D6962A200982AB6 /* Coordinator */,
+				24620B762D66B79B00ED9B64 /* View */,
+				24620B752D66B79100ED9B64 /* Factory */,
+				24620B742D66B78700ED9B64 /* Entity */,
+				24620B7D2D66B7C800ED9B64 /* HomeViewController.swift */,
+				24620B7F2D66B7CF00ED9B64 /* HomeViewModel.swift */,
+				24AFA6622D68AF6D00982AB6 /* HomeProtocols.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		24620B742D66B78700ED9B64 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				24620B772D66B7A800ED9B64 /* HomeViewEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		24620B752D66B79100ED9B64 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				24620B792D66B7B200ED9B64 /* HomeViewFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		24620B762D66B79B00ED9B64 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				24AFA65D2D68003F00982AB6 /* Cell */,
+				24620B722D66B78500ED9B64 /* HomeView.swift */,
+				24620B7B2D66B7BB00ED9B64 /* HomeViewState.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		24AFA65D2D68003F00982AB6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				24AFA65E2D68006800982AB6 /* RepositoryCellView.swift */,
+				24AFA6602D6807E500982AB6 /* RepositoryCellViewEntity.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		24AFA6642D6962A200982AB6 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				24AFA6652D6962AB00982AB6 /* HomeCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		24AFA6672D69648600982AB6 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				24AFA66A2D69649100982AB6 /* AppCoordinator.swift */,
+				24AFA6682D69649000982AB6 /* AppCoordinatorFactory.swift */,
+				24AFA6692D69649100982AB6 /* Coordinator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		24AFA66E2D6BBCE400982AB6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				24AFA66F2D6BBCEF00982AB6 /* LoadingView.swift */,
+				24AFA6712D6BBE1F00982AB6 /* ErrorView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		24AFA6732D6BCB2200982AB6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				24AFA67F2D6BCCFA00982AB6 /* Stubs */,
+				24AFA6742D6BCB4B00982AB6 /* Spies */,
+				24AFA6822D6BCDDB00982AB6 /* HomeViewModelTests.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		24AFA6742D6BCB4B00982AB6 /* Spies */ = {
+			isa = PBXGroup;
+			children = (
+				24AFA6752D6BCB5C00982AB6 /* HomeCoordinatorSpy.swift */,
+				24AFA6772D6BCB8A00982AB6 /* HomeViewFactorySpy.swift */,
+				24AFA6792D6BCB9B00982AB6 /* GetPullsUseCaseSpy.swift */,
+				24AFA6872D6BCF6700982AB6 /* HomeViewControllerSpy.swift */,
+			);
+			path = Spies;
+			sourceTree = "<group>";
+		};
+		24AFA67F2D6BCCFA00982AB6 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				24AFA67B2D6BCBD500982AB6 /* HomeViewEntityStub.swift */,
+				24AFA67D2D6BCC1100982AB6 /* RepositoryCellViewEntityStub.swift */,
+				24AFA6802D6BCD0B00982AB6 /* GetRepositoriesUseCaseResponseStub.swift */,
+				24AFA6892D6BD0BE00982AB6 /* RepositoriesRequestStub.swift */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		24AFA68B2D6BD81400982AB6 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				24AFA68C2D6BD81F00982AB6 /* HomeViewControllerFactory.swift */,
+				24AFA68E2D6BD83F00982AB6 /* HomeViewControllerFactoryProtocol.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,7 +350,6 @@
 			packageProductDependencies = (
 				24620B692D66B48E00ED9B64 /* Commons */,
 				24620B6B2D66B48E00ED9B64 /* Domain */,
-				24620B6D2D66B48E00ED9B64 /* Navigation */,
 				24620B6F2D66B48E00ED9B64 /* Networking */,
 			);
 			productName = GHApp;
@@ -297,8 +466,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24620B782D66B7A800ED9B64 /* HomeViewEntity.swift in Sources */,
+				24620B7A2D66B7B200ED9B64 /* HomeViewFactory.swift in Sources */,
+				24620B732D66B78500ED9B64 /* HomeView.swift in Sources */,
+				24620B802D66B7CF00ED9B64 /* HomeViewModel.swift in Sources */,
+				24AFA6722D6BBE1F00982AB6 /* ErrorView.swift in Sources */,
+				24AFA6632D68AF6D00982AB6 /* HomeProtocols.swift in Sources */,
+				24AFA6702D6BBCEF00982AB6 /* LoadingView.swift in Sources */,
+				24AFA6662D6962AB00982AB6 /* HomeCoordinator.swift in Sources */,
+				24AFA68D2D6BD81F00982AB6 /* HomeViewControllerFactory.swift in Sources */,
+				24AFA66C2D69649100982AB6 /* Coordinator.swift in Sources */,
+				24AFA66B2D69649100982AB6 /* AppCoordinatorFactory.swift in Sources */,
+				24620B7C2D66B7BB00ED9B64 /* HomeViewState.swift in Sources */,
 				24620B072D66A9D100ED9B64 /* AppDelegate.swift in Sources */,
+				24AFA65F2D68006800982AB6 /* RepositoryCellView.swift in Sources */,
+				24AFA68F2D6BD83F00982AB6 /* HomeViewControllerFactoryProtocol.swift in Sources */,
+				24620B7E2D66B7C800ED9B64 /* HomeViewController.swift in Sources */,
+				24AFA66D2D69649100982AB6 /* AppCoordinator.swift in Sources */,
 				24620B092D66A9D100ED9B64 /* SceneDelegate.swift in Sources */,
+				24AFA6612D6807E500982AB6 /* RepositoryCellViewEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +492,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24AFA67A2D6BCB9B00982AB6 /* GetPullsUseCaseSpy.swift in Sources */,
+				24AFA6782D6BCB8A00982AB6 /* HomeViewFactorySpy.swift in Sources */,
+				24AFA6762D6BCB5C00982AB6 /* HomeCoordinatorSpy.swift in Sources */,
+				24AFA6832D6BCDDB00982AB6 /* HomeViewModelTests.swift in Sources */,
+				24AFA6812D6BCD0B00982AB6 /* GetRepositoriesUseCaseResponseStub.swift in Sources */,
+				24AFA67E2D6BCC1100982AB6 /* RepositoryCellViewEntityStub.swift in Sources */,
+				24AFA67C2D6BCBD500982AB6 /* HomeViewEntityStub.swift in Sources */,
+				24AFA68A2D6BD0BE00982AB6 /* RepositoriesRequestStub.swift in Sources */,
 				24620B1E2D66A9D400ED9B64 /* GHAppTests.swift in Sources */,
+				24AFA6882D6BCF6700982AB6 /* HomeViewControllerSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,10 +833,6 @@
 		24620B6B2D66B48E00ED9B64 /* Domain */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Domain;
-		};
-		24620B6D2D66B48E00ED9B64 /* Navigation */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Navigation;
 		};
 		24620B6F2D66B48E00ED9B64 /* Networking */ = {
 			isa = XCSwiftPackageProductDependency;

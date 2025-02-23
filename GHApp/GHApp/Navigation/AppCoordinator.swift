@@ -13,7 +13,7 @@ public class AppCoordinator: Coordinator {
     
     weak var coordinatorDelegate: CoordinatorDelegate?
     
-    var navigationController: UINavigationController
+    public var navigationController: UINavigationController
     let factory: AppCoordinatorFactoryProtocol
     let window: UIWindow?
     
@@ -21,7 +21,7 @@ public class AppCoordinator: Coordinator {
         
     // MARK: - INITIALIZERS
     
-    public init(factory: AppCoordinatorFactoryProtocol, navigationController: UINavigationController, window: UIWindow?) {
+    init(factory: AppCoordinatorFactoryProtocol, navigationController: UINavigationController, window: UIWindow?) {
         self.factory = factory
         self.navigationController = navigationController
         self.window = window
@@ -36,20 +36,14 @@ public class AppCoordinator: Coordinator {
     }
     
     private func showHome() {
-//        let homeCoordinator = factory.makeHomeCoordinator(navigationController: navigationController)
-//        DispatchQueue.main.async {
-//            homeCoordinator.delegate = self
-//            homeCoordinator.start()
-//        }
+        let homeCoordinator = factory.makeHomeCoordinator(navigationController: navigationController)
+        DispatchQueue.main.async {
+            homeCoordinator.delegate = self
+            homeCoordinator.start()
+        }
     }
 }
 
 // MARK: - HomeCoordinatorDelegate
 
-//extension AppCoordinator: HomeCoordinatorDelegate {
-//    
-//    func goToDetails(with identifier: String) {
-//        let detailCoordinator = factory.makeDetailCoordinator(navigationController: navigationController)
-//        detailCoordinator.goToDetails(with: identifier)
-//    }
-//}
+extension AppCoordinator: HomeCoordinatorDelegate { }

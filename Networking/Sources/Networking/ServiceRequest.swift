@@ -23,8 +23,8 @@ enum ServiceRequest {
     
     var path: String {
         switch self {
-        case let .getRepositories(request): // TODO: make it query params
-            return "/repositories?q=language:\(request.language)&sort=stars&page=\(request.offset)"
+        case .getRepositories:
+            return "/repositories"
         case let .repositoriesPRs(request):
             return "/\(request.owner)/\(request.repository)/pulls"
         }
@@ -34,6 +34,19 @@ enum ServiceRequest {
         switch self {
         case .getRepositories, .repositoriesPRs:
             return "GET"
+        }
+    }
+    
+    var queryParams: [String: Any]? {
+        switch self {
+        case let .getRepositories(repositoriesRequest):
+            return [
+                "q": "language:\(repositoriesRequest.language)",
+                "sort": repositoriesRequest.sortItem,
+                "page": repositoriesRequest.offset
+            ]
+        case .repositoriesPRs:
+            return nil
         }
     }
 }

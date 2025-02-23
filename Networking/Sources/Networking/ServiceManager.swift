@@ -8,10 +8,12 @@
 import Foundation
 import Domain
 
-final class ServiceManager {
+public final class ServiceManager {
     
     let urlSession = URLSession.shared
     let decoder = JSONDecoder()
+    
+    public init() { }
     
     // MARK: - METHODS
     
@@ -37,11 +39,17 @@ final class ServiceManager {
     }
     
     private func buildURL(from request: ServiceRequest) -> URL? {
-        guard let baseUrl = URL(string: request.baseUrl) else {
+        guard var urlComponents = URLComponents(string: request.baseUrl) else {
             return nil
         }
         
-        return baseUrl.appendingPathComponent(request.path)
+        urlComponents.path += request.path
+        
+        if let queryParams = request.queryParams {
+            urlComponents.queryItems = queryParams.map { URLQueryItem(name: $0.key, value: "\($0.value)") }
+        }
+        
+        return urlComponents.url
     }
     
     private func validateResponse(_ response: URLResponse, data: Data) throws {
@@ -94,13 +102,13 @@ final class ServiceManager {
 
 extension ServiceManager: ServiceManagerProtocol {
     
-    func fetchRepositories(with request: RepositoriesRequest) async throws -> GetRepositoriesUseCaseResponse {
+    public func fetchRepositories(with request: RepositoriesRequest) async throws -> GetRepositoriesUseCaseResponse {
         let request = ServiceRequest.getRepositories(request)
         
         return try await fetch(request: request, type: GetRepositoriesUseCaseResponse.self)
     }
     
-    func fetchPullsForRepository(with request: RepositoryPullsRequest) async throws -> GetPullsUseCaseResponse {
+    public func fetchPullsForRepository(with request: RepositoryPullsRequest) async throws -> GetPullsUseCaseResponse {
         let request = ServiceRequest.repositoriesPRs(request)
         
         return try await fetch(request: request, type: GetPullsUseCaseResponse.self)
