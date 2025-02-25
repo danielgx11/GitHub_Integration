@@ -8,8 +8,6 @@
 import Foundation
 import Domain
 
-#if DEBUG
-
 extension GetRepositoriesUseCaseResponse {
     
     static func stub() -> GetRepositoriesUseCaseResponse {
@@ -20,7 +18,7 @@ extension GetRepositoriesUseCaseResponse {
                 id: 1,
                 name: "Alamofire",
                 fullName: "Alamofire-iOS",
-                owner: .init(login: "Alam", avatarURL: ""),
+                owner: .init(login: "Alam", avatarURL: "", type: "User"),
                 description: "Code to implement Alamofire",
                 stargazersCount: 3,
                 forksCount: 3
@@ -28,5 +26,3 @@ extension GetRepositoriesUseCaseResponse {
         )
     }
 }
-
-#endif

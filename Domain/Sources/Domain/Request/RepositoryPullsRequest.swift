@@ -8,6 +8,9 @@
 import Foundation
 
 public struct RepositoryPullsRequest: Encodable {
-    public let owner: String
     public let repository: String
+    
+    public init(repository: String) {
+        self.repository = repository
+    }
 }

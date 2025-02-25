@@ -9,8 +9,6 @@ import Foundation
 
 @testable import GHApp
 
-#if DEBUG
-
 extension RepositoryCellViewEntity {
     
     static func stub() -> RepositoryCellViewEntity {
@@ -21,10 +19,9 @@ extension RepositoryCellViewEntity {
                 forks: 3,
                 stars: 3,
                 profile: .init(image: nil,
-                               name: "Alam")
+                               name: "Alam",
+                               type: "User")
             )
         )
     }
 }
-
-#endif

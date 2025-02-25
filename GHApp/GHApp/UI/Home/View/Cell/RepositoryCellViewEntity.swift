@@ -15,11 +15,13 @@ struct RepositoryCellViewEntity {
         let description: String?
         let forks: Int
         let stars: Int
-        let profile: Profile?
+        let profile: ProfileEntity?
     }
-    
-    struct Profile {
-        let image: URL?
-        let name: String
-    }
+
+}
+
+struct ProfileEntity {
+    let image: URL?
+    let name: String
+    let type: String?
 }

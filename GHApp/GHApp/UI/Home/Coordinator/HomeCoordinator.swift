@@ -10,9 +10,14 @@ import Networking
 import UIKit
 import Domain
 
-protocol HomeCoordinatorProtocol { }
+protocol HomeCoordinatorProtocol {
+    func goToRepositoryDetail(with entity: RepositoryDetailEntity) 
+}
 
-protocol HomeCoordinatorDelegate: AnyObject { }
+protocol HomeCoordinatorDelegate: AnyObject {
+    
+    func goToRepositoryDetail(with entity: RepositoryDetailEntity)
+}
 
 final class HomeCoordinator: Coordinator {
     
@@ -33,16 +38,16 @@ final class HomeCoordinator: Coordinator {
     // MARK: - METHODS
     
     func start() {
-        let viewController = factory.makeHomeViewController(delegate: self)
+        let viewController = factory.makeHomeViewController(coordinator: self)
         navigationController.pushViewController(viewController, animated: true)
     }
 }
 
-// MARK: - HomeViewControllerDelegate
+// MARK: - HomeCoordinatorProtocol
 
-extension HomeCoordinator: HomeViewControllerDelegate {
+extension HomeCoordinator: HomeCoordinatorProtocol {
     
-    func goToRepositoryDetail() {
-        // TODO: go to details
+    func goToRepositoryDetail(with entity: RepositoryDetailEntity) {
+        delegate?.goToRepositoryDetail(with: entity)
     }
 }

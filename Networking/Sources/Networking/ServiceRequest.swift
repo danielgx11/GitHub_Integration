@@ -26,7 +26,7 @@ enum ServiceRequest {
         case .getRepositories:
             return "/repositories"
         case let .repositoriesPRs(request):
-            return "/\(request.owner)/\(request.repository)/pulls"
+            return "/\(request.repository)/pulls"
         }
     }
     

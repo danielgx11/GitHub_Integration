@@ -33,15 +33,15 @@ final class HomeViewModel: HomeViewModelProtocol {
         }
     }
     
-    private let getPullsUseCase: GetPullsUseCaseProtocol
+    private let getRepositoriesUseCase: GetRepositoriesUseCaseProtocol
     private let factory: HomeViewFactoryProtocol
     
     weak var viewController: HomeViewControllerProtocol?
         
     // MARK: - INITIALIZERS
     
-    init(getPullsUseCase: GetPullsUseCaseProtocol, factory: HomeViewFactoryProtocol) {
-        self.getPullsUseCase = getPullsUseCase
+    init(getRepositoriesUseCase: GetRepositoriesUseCaseProtocol, factory: HomeViewFactoryProtocol) {
+        self.getRepositoriesUseCase = getRepositoriesUseCase
         self.factory = factory
     }
     
@@ -57,6 +57,10 @@ final class HomeViewModel: HomeViewModelProtocol {
         fetchRepositories(page: page)
     }
     
+    func makeRepositoryDetailEntity(repository: String) -> RepositoryDetailEntity {
+        factory.buildRepositoryDetailEntity(repository: repository)
+    }
+    
 }
 
 // MARK: - PRIVATE METHODS
@@ -70,7 +74,7 @@ extension HomeViewModel {
         
         Task(priority: .background) {
             do {
-                let response = try await getPullsUseCase.execute(with: request)
+                let response = try await getRepositoriesUseCase.execute(with: request)
                 
                 let entity = factory.buildViewEntity(with: response)
                 

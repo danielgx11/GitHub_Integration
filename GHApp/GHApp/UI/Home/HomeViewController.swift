@@ -20,13 +20,13 @@ public final class HomeViewController: UIViewController {
     
     private let viewModel: HomeViewModelProtocol
     private let contentView: HomeViewProtocol
-    
-    weak var delegate: HomeViewControllerDelegate?
+    private let coordinator: HomeCoordinatorProtocol
     
     // MARK: - INITIALIZERS
     
-    init(viewModel: HomeViewModelProtocol, contentView: HomeViewProtocol = HomeView()) {
+    init(viewModel: HomeViewModelProtocol, coordinator: HomeCoordinatorProtocol, contentView: HomeViewProtocol = HomeView()) {
         self.viewModel = viewModel
+        self.coordinator = coordinator
         self.contentView = contentView
         
         super.init(nibName: nil, bundle: nil)
@@ -73,6 +73,12 @@ extension HomeViewController: HomeViewDelegate {
     
     func fetchMoreRepositories(page: Int) {
         viewModel.fetchMoreRepositories(page: page)
+    }
+    
+    func didTapViewRepositoryPRsDetail(repository: String) {
+        let repositoryDetailEntity = viewModel.makeRepositoryDetailEntity(repository: repository)
+        
+        coordinator.goToRepositoryDetail(with: repositoryDetailEntity)
     }
 }
 

@@ -9,5 +9,5 @@ import Foundation
 
 public protocol ServiceManagerProtocol {
     func fetchRepositories(with request: RepositoriesRequest) async throws -> GetRepositoriesUseCaseResponse
-    func fetchPullsForRepository(with request: RepositoryPullsRequest) async throws -> GetPullsUseCaseResponse
+    func fetchPullsForRepository(with request: RepositoryPullsRequest) async throws -> [GetPullsUseCaseResponse]
 }

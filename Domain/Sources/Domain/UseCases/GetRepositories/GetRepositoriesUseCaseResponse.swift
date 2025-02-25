@@ -63,14 +63,16 @@ public struct Repository: Decodable {
 public struct Owner: Decodable {
     public let login: String
     public let avatarURL: String
+    public let type: String?
     
-    public init(login: String, avatarURL: String) {
+    public init(login: String, avatarURL: String, type: String?) {
         self.login = login
         self.avatarURL = avatarURL
+        self.type = type
     }
     
     enum CodingKeys: String, CodingKey {
-        case login
+        case login, type
         case avatarURL = "avatar_url"
     }
 }

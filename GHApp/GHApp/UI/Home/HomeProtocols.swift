@@ -9,11 +9,7 @@ import Foundation
 
 protocol HomeViewDelegate: AnyObject {
     func fetchMoreRepositories(page: Int)
-}
-
-protocol HomeViewControllerDelegate: AnyObject {
-    
-    func goToRepositoryDetail()
+    func didTapViewRepositoryPRsDetail(repository: String)
 }
 
 protocol HomeViewModelProtocol: AnyObject {
@@ -22,6 +18,7 @@ protocol HomeViewModelProtocol: AnyObject {
     
     func initState()
     func fetchMoreRepositories(page: Int)
+    func makeRepositoryDetailEntity(repository: String) -> RepositoryDetailEntity
 }
 
 protocol HomeViewControllerProtocol: AnyObject {

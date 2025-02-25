@@ -9,8 +9,6 @@ import Foundation
 
 @testable import GHApp
 
-#if DEBUG
-
 extension HomeViewEntity {
     
     static func stub() -> HomeViewEntity {
@@ -18,5 +16,3 @@ extension HomeViewEntity {
               repositories: [RepositoryCellViewEntity.stub()])
     }
 }
-
-#endif

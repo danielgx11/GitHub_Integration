@@ -15,7 +15,7 @@ public final class GetPullsUseCase {
 
 extension GetPullsUseCase: GetPullsUseCaseProtocol {
     
-    public func execute(with request: RepositoriesRequest) async throws -> GetRepositoriesUseCaseResponse {
-        try await service.fetchRepositories(with: request)
+    public func execute(with request: RepositoryPullsRequest) async throws -> [GetPullsUseCaseResponse] {
+        try await service.fetchPullsForRepository(with: request)
     }
 }

@@ -175,7 +175,7 @@ final class RepositoryCellView: UITableViewCell {
         starsLabel.text = String(entity.stars)
     }
     
-    private func updateProfile(with entity: RepositoryCellViewEntity.Profile?) {
+    private func updateProfile(with entity: ProfileEntity?) {
         // TODO: load async image
         
         authorNameLabel.text = entity?.name

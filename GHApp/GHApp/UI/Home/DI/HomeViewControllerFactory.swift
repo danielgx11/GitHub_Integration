@@ -12,17 +12,15 @@ import UIKit
 
 struct HomeViewControllerFactory: HomeViewControllerFactoryProtocol {
     
-    func makeHomeViewController(delegate: HomeCoordinator) -> UIViewController {
+    func makeHomeViewController(coordinator: HomeCoordinatorProtocol) -> UIViewController {
         let service = ServiceManager()
-        let getPullsUseCase = GetPullsUseCase(service: service)
+        let getRepositoriesUseCase = GetRepositoriesUseCase(service: service)
         let factory = HomeViewFactory()
-        let viewModel = HomeViewModel(getPullsUseCase: getPullsUseCase, factory: factory)
-        let viewController = HomeViewController(viewModel: viewModel)
+        let viewModel = HomeViewModel(getRepositoriesUseCase: getRepositoriesUseCase, factory: factory)
+        let viewController = HomeViewController(viewModel: viewModel, coordinator: coordinator)
         
         viewModel.viewController = viewController
-        
-        viewController.delegate = delegate
-                
+                        
         return viewController
     }
 }

@@ -11,6 +11,7 @@ import Domain
 protocol HomeViewFactoryProtocol {
     
     func buildViewEntity(with data: GetRepositoriesUseCaseResponse) -> HomeViewEntity
+    func buildRepositoryDetailEntity(repository: String) -> RepositoryDetailEntity
 }
 
 struct HomeViewFactory: HomeViewFactoryProtocol {
@@ -21,6 +22,10 @@ struct HomeViewFactory: HomeViewFactoryProtocol {
         let entity = HomeViewEntity(totalPagesCount: data.totalCount, repositories: repositories)
         
         return entity
+    }
+    
+    func buildRepositoryDetailEntity(repository: String) -> RepositoryDetailEntity {
+        .init(repository: repository)
     }
     
     private func makeRepositories(with data: [Repository]) -> [RepositoryCellViewEntity] {
@@ -45,12 +50,13 @@ struct HomeViewFactory: HomeViewFactoryProtocol {
         return entity
     }
     
-    private func makeProfile(with data: Owner) -> RepositoryCellViewEntity.Profile {
+    private func makeProfile(with data: Owner) -> ProfileEntity {
         let imageUrl = URL(string: data.avatarURL)
         
-        let entity = RepositoryCellViewEntity.Profile(
+        let entity = ProfileEntity(
             image: imageUrl,
-            name: data.login
+            name: data.login,
+            type: data.type
         )
         
         return entity

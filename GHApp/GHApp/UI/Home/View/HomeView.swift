@@ -70,7 +70,7 @@ final class HomeView: UIView {
     
     private var items = [RepositoryCellViewEntity]()
     
-    // MARK: - LIFE CYCLE
+    // MARK: - INITIALIZERS
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -150,8 +150,13 @@ extension HomeView {
 
 extension HomeView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = items[indexPath.row]
+        
+        delegate?.didTapViewRepositoryPRsDetail(
+            repository: item.repositoryInformation.title
+        )
+        
         tableView.deselectRow(at: indexPath, animated: true)
-        // TODO: did select row at
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

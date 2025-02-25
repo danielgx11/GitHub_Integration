@@ -108,9 +108,9 @@ extension ServiceManager: ServiceManagerProtocol {
         return try await fetch(request: request, type: GetRepositoriesUseCaseResponse.self)
     }
     
-    public func fetchPullsForRepository(with request: RepositoryPullsRequest) async throws -> GetPullsUseCaseResponse {
+    public func fetchPullsForRepository(with request: RepositoryPullsRequest) async throws -> [GetPullsUseCaseResponse] {
         let request = ServiceRequest.repositoriesPRs(request)
         
-        return try await fetch(request: request, type: GetPullsUseCaseResponse.self)
+        return try await fetch(request: request, type: [GetPullsUseCaseResponse].self)
     }
 }

@@ -7,4 +7,11 @@
 
 @testable import GHApp
 
-final class HomeCoordinatorSpy: HomeCoordinatorProtocol { }
+final class HomeCoordinatorSpy: HomeCoordinatorProtocol {
+    
+    private(set) var goToRepositoryCalled = false
+    
+    func goToRepositoryDetail(with entity: GHApp.RepositoryDetailEntity) {
+        goToRepositoryCalled = true
+    }
+}

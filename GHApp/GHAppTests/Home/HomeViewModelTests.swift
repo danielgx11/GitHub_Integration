@@ -14,7 +14,7 @@ final class HomeViewModelTests: XCTestCase {
     
     // MARK: - PROPERTIES
     
-    var getPullsUseCaseSpy: GetPullsUseCaseSpy!
+    var getPullsUseCaseSpy: GetRepositoriesUseCaseSpy!
     var factorySpy: HomeViewFactorySpy!
     var viewControllerSpy: HomeViewControllerSpy!
     var sut: HomeViewModel!
@@ -23,10 +23,10 @@ final class HomeViewModelTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        getPullsUseCaseSpy = GetPullsUseCaseSpy()
+        getPullsUseCaseSpy = GetRepositoriesUseCaseSpy()
         factorySpy = HomeViewFactorySpy()
         viewControllerSpy = HomeViewControllerSpy()
-        sut = HomeViewModel(getPullsUseCase: getPullsUseCaseSpy, factory: factorySpy)
+        sut = HomeViewModel(getRepositoriesUseCase: getPullsUseCaseSpy, factory: factorySpy)
         sut.viewController = viewControllerSpy
     }
 
@@ -53,8 +53,8 @@ final class HomeViewModelTests: XCTestCase {
     func testInitState_ShouldTriggerFetchRepositories() {
         sut.initState()
         
-        XCTAssertTrue(viewControllerSpy.updateViewCalled, "O método updateView deveria ser chamado.")
-        XCTAssertTrue(viewControllerSpy.verifyState(.isLoading(true)), "O estado esperado deveria ser isLoading(true).")
+        XCTAssertTrue(viewControllerSpy.updateViewCalled, "O método updateView deveria ser chamado")
+        XCTAssertTrue(viewControllerSpy.verifyState(.isLoading(true)), "O estado esperado deveria ser isLoading(true)")
     }
     
     func testFetchRepositories_ShouldReturnSuccess() async {
@@ -67,8 +67,8 @@ final class HomeViewModelTests: XCTestCase {
         let response = try? await getPullsUseCaseSpy.execute(with: RepositoriesRequest.stub())
         let expectedEntity = factorySpy.buildViewEntity(with: response!)
         
-        XCTAssertTrue(viewControllerSpy.updateViewCalled, "O método updateView deveria ser chamado.")
-        XCTAssertTrue(viewControllerSpy.verifyState(.hasData(expectedEntity)), "O estado esperado deveria ser hasData com a entity correta.")
+        XCTAssertTrue(viewControllerSpy.updateViewCalled, "O método updateView deveria ser chamado")
+        XCTAssertTrue(viewControllerSpy.verifyState(.hasData(expectedEntity)), "O estado esperado deveria ser hasData com a entity correta")
     }
     
     func testFetchRepositories_ShouldReturnError() async {
@@ -78,25 +78,25 @@ final class HomeViewModelTests: XCTestCase {
         
         await setupExpectation()
         
-        XCTAssertTrue(viewControllerSpy.updateViewCalled, "O método updateView deveria ser chamado.")
+        XCTAssertTrue(viewControllerSpy.updateViewCalled, "O método updateView deveria ser chamado")
         XCTAssertTrue(
-            viewControllerSpy.verifyState(.hasPaginationError(textMessage: "Encontramos um erro ao tentar buscar a próxima pagina da listagem. Tente novamente.")),
-            "O estado esperado deveria ser hasError com a mensagem correta."
+            viewControllerSpy.verifyState(.hasPaginationError(textMessage: "Encontramos um erro ao tentar buscar a próxima pagina da listagem. Tente novamente")),
+            "O estado esperado deveria ser hasError com a mensagem correta"
         )
     }
 
     func testPagination_ShouldTriggerCorrectState_WhenPageIsOne() async {
         sut.fetchMoreRepositories(page: 2)
         
-        XCTAssertTrue(viewControllerSpy.updateViewCalled, "O método updateView deveria ser chamado.")
-        XCTAssertTrue(viewControllerSpy.verifyState(.isTableViewLoading(true)), "O estado esperado deveria ser isTableViewLoading(true).")
+        XCTAssertTrue(viewControllerSpy.updateViewCalled, "O método updateView deveria ser chamado")
+        XCTAssertTrue(viewControllerSpy.verifyState(.isTableViewLoading(true)), "O estado esperado deveria ser isTableViewLoading(true)")
     }
     
     func testPagination_ShouldTriggerCorrectState_WhenPageIsGreaterThanOne() async {
         sut.fetchMoreRepositories(page: 2)
         
-        XCTAssertTrue(viewControllerSpy.updateViewCalled, "O método updateView deveria ser chamado.")
-        XCTAssertTrue(viewControllerSpy.verifyState(.isTableViewLoading(true)), "O estado esperado deveria ser isTableViewLoading(true).")
+        XCTAssertTrue(viewControllerSpy.updateViewCalled, "O método updateView deveria ser chamado")
+        XCTAssertTrue(viewControllerSpy.verifyState(.isTableViewLoading(true)), "O estado esperado deveria ser isTableViewLoading(true)")
     }
     
     func testPaginationError_ShouldTriggerCorrectState() async {
@@ -106,11 +106,11 @@ final class HomeViewModelTests: XCTestCase {
                 
         await setupExpectation()
                 
-        XCTAssertTrue(viewControllerSpy.updateViewCalled, "O método updateView deveria ser chamado.")
+        XCTAssertTrue(viewControllerSpy.updateViewCalled, "O método updateView deveria ser chamado")
         XCTAssertTrue(
             viewControllerSpy.verifyState(
-            .hasPaginationError(textMessage: "Encontramos um erro ao tentar buscar a próxima pagina da listagem. Tente novamente.")),
-            "O estado esperado deveria ser hasPaginationError com a mensagem correta."
+            .hasPaginationError(textMessage: "Encontramos um erro ao tentar buscar a próxima pagina da listagem. Tente novamente")),
+            "O estado esperado deveria ser hasPaginationError com a mensagem correta"
         )
     }
 }

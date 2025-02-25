@@ -36,14 +36,35 @@ public class AppCoordinator: Coordinator {
     }
     
     private func showHome() {
-        let homeCoordinator = factory.makeHomeCoordinator(navigationController: navigationController)
+        let coordinator = factory.makeHomeCoordinator(navigationController: navigationController)
         DispatchQueue.main.async {
-            homeCoordinator.delegate = self
-            homeCoordinator.start()
+            coordinator.delegate = self
+            coordinator.start()
         }
     }
 }
 
 // MARK: - HomeCoordinatorDelegate
 
-extension AppCoordinator: HomeCoordinatorDelegate { }
+extension AppCoordinator: HomeCoordinatorDelegate { 
+    
+    func goToRepositoryDetail(with entity: RepositoryDetailEntity) {
+        let coordinator = factory.makeDetailCoordinator(navigationController: navigationController, entity: entity)
+        DispatchQueue.main.async {
+            coordinator.delegate = self
+            coordinator.start()
+        }
+    }
+}
+
+// MARK: - DetailRepositoryCoordinatorDelegate
+
+extension AppCoordinator: DetailRepositoryCoordinatorDelegate {
+    
+    func goToWebView(with url: URL) {
+        let coordinator = factory.makeWebCoordinator(navigationController: navigationController, url: url)
+        DispatchQueue.main.async {
+            coordinator.start()
+        }
+    }
+}

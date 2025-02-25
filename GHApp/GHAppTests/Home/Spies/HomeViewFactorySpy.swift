@@ -12,9 +12,15 @@ import Domain
 final class HomeViewFactorySpy: HomeViewFactoryProtocol {
 
     private(set) var buildEntityCalled = false
+    private(set) var buildRepositoryDetailEntityCalled = false
     
     func buildViewEntity(with data: GetRepositoriesUseCaseResponse) -> HomeViewEntity {
         buildEntityCalled = true
+        return .stub()
+    }
+    
+    func buildRepositoryDetailEntity(repository: String) -> RepositoryDetailEntity {
+        buildRepositoryDetailEntityCalled = true
         return .stub()
     }
     

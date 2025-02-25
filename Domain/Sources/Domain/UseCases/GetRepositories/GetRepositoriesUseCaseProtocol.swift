@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol GetRepositoriesUseCaseProtocol {
+public protocol GetRepositoriesUseCaseProtocol {
     func execute(with request: RepositoriesRequest) async throws -> GetRepositoriesUseCaseResponse
 }

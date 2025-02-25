@@ -9,5 +9,5 @@ import Foundation
 import UIKit
 
 protocol HomeViewControllerFactoryProtocol {
-    func makeHomeViewController(delegate: HomeCoordinator) -> UIViewController
+    func makeHomeViewController(coordinator: HomeCoordinatorProtocol) -> UIViewController
 }

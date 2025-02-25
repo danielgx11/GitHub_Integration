@@ -7,18 +7,18 @@
 
 import Foundation
 
-final class GetRepositoriesUseCase {
+public final class GetRepositoriesUseCase {
     
     let service: ServiceManagerProtocol
     
-    init(service: ServiceManagerProtocol) {
+    public init(service: ServiceManagerProtocol) {
         self.service = service
     }
 }
 
 extension GetRepositoriesUseCase: GetRepositoriesUseCaseProtocol {
     
-    func execute(with request: RepositoriesRequest) async throws -> GetRepositoriesUseCaseResponse {
+    public func execute(with request: RepositoriesRequest) async throws -> GetRepositoriesUseCaseResponse {
         try await service.fetchRepositories(with: request)
     }
 }
