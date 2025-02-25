@@ -57,7 +57,7 @@ final class HomeViewModelTests: XCTestCase {
         XCTAssertTrue(viewControllerSpy.verifyState(.isLoading(true)), "O estado esperado deveria ser isLoading(true)")
     }
     
-    func testFetchRepositories_ShouldReturnSuccess() async {
+    func testFetchRepositoriesShouldReturnSuccess() async {
         getPullsUseCaseSpy.shouldThrowError = false
 
         sut.fetchMoreRepositories(page: 1)
@@ -71,7 +71,7 @@ final class HomeViewModelTests: XCTestCase {
         XCTAssertTrue(viewControllerSpy.verifyState(.hasData(expectedEntity)), "O estado esperado deveria ser hasData com a entity correta")
     }
     
-    func testFetchRepositories_ShouldReturnError() async {
+    func testFetchRepositoriesShouldReturnError() async {
         getPullsUseCaseSpy.shouldThrowError = true
 
         sut.fetchMoreRepositories(page: 2)

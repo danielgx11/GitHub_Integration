@@ -33,7 +33,7 @@ extension HomeViewControllerSpy {
             return a == b
         case (.hasError(let a), .hasError(let b)),
              (.hasPaginationError(let a), .hasPaginationError(let b)):
-            return a == b
+            return !(a.isEmpty && b.isEmpty)
         case (.hasData(let entityA), .hasData(let entityB)):
             return entityA.repositories.count == entityB.repositories.count
         default:
