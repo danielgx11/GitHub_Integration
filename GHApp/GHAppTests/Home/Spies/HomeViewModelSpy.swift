@@ -32,4 +32,8 @@ final class HomeViewModelSpy: HomeViewModelProtocol {
     func makeRepositoryDetailEntity(repository: String) -> RepositoryDetailEntity {
         return RepositoryDetailEntity(repository: repository)
     }
+    
+    func makeAlertEntity(message: String) -> AlertEntity {
+        AlertEntity(title: "", message: "", buttonTitle: "")
+    }
 }

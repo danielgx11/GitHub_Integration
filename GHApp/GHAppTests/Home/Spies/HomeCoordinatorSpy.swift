@@ -10,8 +10,13 @@
 final class HomeCoordinatorSpy: HomeCoordinatorProtocol {
     
     private(set) var goToRepositoryCalled = false
+    private(set) var showAlertCalled = false
     
     func goToRepositoryDetail(with entity: GHApp.RepositoryDetailEntity) {
         goToRepositoryCalled = true
+    }
+    
+    func showAlert(with entity: AlertEntity) {
+        showAlertCalled = true
     }
 }

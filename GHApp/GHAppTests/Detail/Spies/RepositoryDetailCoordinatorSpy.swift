@@ -12,8 +12,13 @@ import Foundation
 final class RepositoryDetailCoordinatorSpy: DetailRepositoryCoordinatorProtocol {
     
     private(set) var goToWebViewCalled = false
+    private(set) var popViewCalled = false
     
     func goToWebView(with url: URL) {
         goToWebViewCalled = true
+    }
+    
+    func popView() {
+        popViewCalled = true
     }
 }

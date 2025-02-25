@@ -37,20 +37,20 @@ final class HomeViewControllerTests: XCTestCase {
     
     // MARK: - TESTS
     
-    func test_viewDidLoad_ShouldInitializeCorrectly() {
+    func testViewDidLoadShouldInitializeCorrectly() {
         sut.viewDidLoad()
         
         XCTAssertEqual(sut.title, "Repositories", "O título deveria ser 'Repositories'")
         XCTAssertEqual(contentViewSpy.delegate as? HomeViewController, sut, "O contentView.delegate deveria ser a própria ViewController")
     }
     
-    func test_viewWillAppear_ShouldCallViewModelInitState() {
+    func testViewWillAppearShouldCallViewModelInitState() {
         sut.viewWillAppear(true)
         
         XCTAssertTrue(viewModelSpy.initStateCalled, "O método initState() deveria ter sido chamado")
     }
     
-    func test_fetchMoreRepositories_ShouldCallViewModelFetchMoreRepositories() {
+    func testFetchMoreRepositoriesShouldCallViewModelFetchMoreRepositories() {
         let page = 2
         
         sut.fetchMoreRepositories(page: page)
@@ -59,7 +59,7 @@ final class HomeViewControllerTests: XCTestCase {
         XCTAssertEqual(viewModelSpy.fetchMoreRepositoriesPage, page, "O parâmetro da página deveria ser \(page)")
     }
     
-    func test_didTapViewRepositoryPRsDetail_ShouldCallCoordinator() {
+    func testDidTapViewRepositoryPRsDetailShouldCallCoordinator() {
         let repository = "apple/swift"
         
         sut.didTapViewRepositoryPRsDetail(repository: repository)
@@ -67,7 +67,13 @@ final class HomeViewControllerTests: XCTestCase {
         XCTAssertTrue(coordinatorSpy.goToRepositoryCalled, "O método goToRepositoryDetail deveria ter sido chamado")
     }
     
-    func test_updateView_ShouldCallContentViewUpdateView() {
+    func testShowAlertCalled() {
+        sut.showAlert(message: "Alert message")
+        
+        XCTAssertTrue(coordinatorSpy.showAlertCalled, "O método showAlerts deveria ter sido chamado")
+    }
+    
+    func testUpdateViewShouldCallContentViewUpdateView() {
         let viewState = HomeViewState.isLoading(true)
         
         sut.updateView(with: viewState)

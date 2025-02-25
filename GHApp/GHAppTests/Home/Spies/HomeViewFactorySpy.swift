@@ -24,4 +24,7 @@ final class HomeViewFactorySpy: HomeViewFactoryProtocol {
         return .stub()
     }
     
+    func buildAlertEntity(with message: String) -> AlertEntity {
+        .init(title: "", message: "", buttonTitle: "")
+    }
 }
