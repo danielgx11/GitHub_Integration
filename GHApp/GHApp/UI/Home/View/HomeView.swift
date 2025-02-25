@@ -200,8 +200,8 @@ extension HomeView: HomeViewProtocol {
             updateViewWithError(textMessage: textMessage)
         case let .isLoading(isLoading):
             updateLoadingView(isLoading: isLoading)
-        case let .hasPaginationError(textMessage) : break
-            // TODO: show dialog
+        case let .hasPaginationError(textMessage):
+            delegate?.showAlert(message: textMessage)
         case let .isTableViewLoading(isLoading):
             DispatchQueue.main.async { [self] in
                 if isLoading {

@@ -65,6 +65,10 @@ final class HomeViewModel: HomeViewModelProtocol {
         factory.buildRepositoryDetailEntity(repository: repository)
     }
     
+    func makeAlertEntity(message: String) -> AlertEntity {
+        factory.buildAlertEntity(with: message)
+    }
+    
 }
 
 // MARK: - PRIVATE METHODS
@@ -89,7 +93,7 @@ extension HomeViewModel {
             } catch {
                 if page == VMMetrics.one {
                     await MainActor.run {
-                        viewState = .hasError(textMessage: Constants.errorMessage)
+                        viewState = .hasError(textMessage: factory.buildErrorMessage(with: error))
                     }
                 } else {
                     RunLoop.main.perform { [weak self] in

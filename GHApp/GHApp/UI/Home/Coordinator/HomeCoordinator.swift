@@ -12,6 +12,7 @@ import Domain
 
 protocol HomeCoordinatorProtocol {
     func goToRepositoryDetail(with entity: RepositoryDetailEntity) 
+    func showAlert(with entity: AlertEntity)
 }
 
 protocol HomeCoordinatorDelegate: AnyObject {
@@ -49,5 +50,13 @@ extension HomeCoordinator: HomeCoordinatorProtocol {
     
     func goToRepositoryDetail(with entity: RepositoryDetailEntity) {
         delegate?.goToRepositoryDetail(with: entity)
+    }
+    
+    func showAlert(with entity: AlertEntity) {
+        let alertController = UIAlertController(title: entity.title, message: entity.message, preferredStyle: .alert)
+        let okButton = UIAlertAction(title: entity.buttonTitle, style: .default)
+        
+        alertController.addAction(okButton)
+        navigationController.present(alertController, animated: true)
     }
 }

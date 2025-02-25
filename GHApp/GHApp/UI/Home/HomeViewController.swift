@@ -84,6 +84,12 @@ extension HomeViewController: HomeViewDelegate {
         
         coordinator.goToRepositoryDetail(with: repositoryDetailEntity)
     }
+    
+    func showAlert(message: String) {
+        let alertEntity = viewModel.makeAlertEntity(message: message)
+        
+        coordinator.showAlert(with: alertEntity)
+    }
 }
 
 // MARK: - HomeViewControllerProtocol

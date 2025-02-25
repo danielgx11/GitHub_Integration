@@ -76,7 +76,7 @@ final class DetailRepositoryViewModel: DetailRepositoryViewModelProtocol {
             } catch {
                 await MainActor.run {
                     viewState = .isLoading(false)
-                    viewState = .hasError(textMessage: error.localizedDescription)
+                    viewState = .hasError(textMessage: factory.buildErrorMessage(with: error))
                 }
             }
         }

@@ -7,11 +7,13 @@
 
 import Foundation
 import Domain
+import Commons
 
-protocol HomeViewFactoryProtocol {
+protocol HomeViewFactoryProtocol: ViewFactoryProtocol {
     
     func buildViewEntity(with data: GetRepositoriesUseCaseResponse) -> HomeViewEntity
     func buildRepositoryDetailEntity(repository: String) -> RepositoryDetailEntity
+    func buildAlertEntity(with message: String) -> AlertEntity
 }
 
 struct HomeViewFactory: HomeViewFactoryProtocol {
@@ -26,6 +28,14 @@ struct HomeViewFactory: HomeViewFactoryProtocol {
     
     func buildRepositoryDetailEntity(repository: String) -> RepositoryDetailEntity {
         .init(repository: repository)
+    }
+    
+    func buildAlertEntity(with message: String) -> AlertEntity {
+        AlertEntity(
+            title: "Ops",
+            message: message,
+            buttonTitle: "Done"
+        )
     }
     
     private func makeRepositories(with data: [Repository]) -> [RepositoryCellViewEntity] {

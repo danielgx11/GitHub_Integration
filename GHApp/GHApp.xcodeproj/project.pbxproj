@@ -74,6 +74,7 @@
 		24AFA6D92D6D4F1600982AB6 /* DetailRepositoryViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA6D82D6D4F1600982AB6 /* DetailRepositoryViewSpy.swift */; };
 		24AFA6DB2D6D4FE900982AB6 /* DetailRepositoryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA6DA2D6D4FE900982AB6 /* DetailRepositoryViewControllerTests.swift */; };
 		24AFA6DD2D6D502400982AB6 /* DetailRepositoryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA6DC2D6D502400982AB6 /* DetailRepositoryViewModelTests.swift */; };
+		24AFA6E12D6D626600982AB6 /* AlertEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFA6E02D6D626600982AB6 /* AlertEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +166,7 @@
 		24AFA6D82D6D4F1600982AB6 /* DetailRepositoryViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRepositoryViewSpy.swift; sourceTree = "<group>"; };
 		24AFA6DA2D6D4FE900982AB6 /* DetailRepositoryViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRepositoryViewControllerTests.swift; sourceTree = "<group>"; };
 		24AFA6DC2D6D502400982AB6 /* DetailRepositoryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRepositoryViewModelTests.swift; sourceTree = "<group>"; };
+		24AFA6E02D6D626600982AB6 /* AlertEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -471,6 +473,7 @@
 			isa = PBXGroup;
 			children = (
 				24AFA6AC2D6BE6EC00982AB6 /* RepositoryDetailEntity.swift */,
+				24AFA6E02D6D626600982AB6 /* AlertEntity.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				24AFA6BA2D6D457600982AB6 /* WebViewControllerFactoryProtocol.swift in Sources */,
 				24AFA6B62D6D450200982AB6 /* WebViewCoordinator.swift in Sources */,
 				24620B092D66A9D100ED9B64 /* SceneDelegate.swift in Sources */,
+				24AFA6E12D6D626600982AB6 /* AlertEntity.swift in Sources */,
 				24AFA6612D6807E500982AB6 /* RepositoryCellViewEntity.swift in Sources */,
 				24AFA6A42D6BDD1800982AB6 /* DetailRepositoryView.swift in Sources */,
 			);

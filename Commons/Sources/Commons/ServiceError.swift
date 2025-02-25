@@ -1,13 +1,13 @@
 //
 //  ServiceError.swift
-//  CATAAS
+//  
 //
-//  Created by Daniel Gomes Xavier on 19/02/25.
+//  Created by Daniel Gomes Xavier on 24/02/25.
 //
 
 import Foundation
 
-enum ServiceError: LocalizedError {
+public enum ServiceError: LocalizedError {
     case invalidUrl
     case invalidResponse
     case invalidStatusCode
@@ -22,7 +22,7 @@ enum ServiceError: LocalizedError {
     case networkFailure(Error)
     case unknown(Error)
     
-    var errorDescription: String? {
+    public var errorDescription: String? {
         switch self {
         case .invalidUrl:
             return "The URL is invalid"

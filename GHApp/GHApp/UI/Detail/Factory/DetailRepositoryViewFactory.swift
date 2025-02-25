@@ -9,7 +9,7 @@ import Foundation
 import Domain
 import Commons
 
-protocol DetailRepositoryViewFactoryProtocol {
+protocol DetailRepositoryViewFactoryProtocol: ViewFactoryProtocol {
     func buildViewEntity(with response: [GetPullsUseCaseResponse]) -> DetailRepositoryViewEntity
 }
 

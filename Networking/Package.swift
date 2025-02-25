@@ -13,12 +13,13 @@ let package = Package(
             targets: ["Networking"]),
     ],
     dependencies: [
-        .package(name: "Domain", path: "../Domain")
+        .package(name: "Domain", path: "../Domain"),
+        .package(name: "Commons", path: "../Commons"),
     ],
     targets: [
         .target(
             name: "Networking",
-            dependencies: ["Domain"]
+            dependencies: ["Domain", "Commons"]
         ),
         .testTarget(
             name: "NetworkingTests",
