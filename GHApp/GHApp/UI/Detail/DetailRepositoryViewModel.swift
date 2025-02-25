@@ -43,6 +43,10 @@ final class DetailRepositoryViewModel: DetailRepositoryViewModelProtocol {
         self.factory = factory
     }
     
+    deinit {
+        debugPrint("\(self) was deallocated")
+    }
+    
     // MARK: - PUBLIC METHODS
     
     func initState() {

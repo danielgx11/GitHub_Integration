@@ -34,6 +34,10 @@ final class WebViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        debugPrint("\(self) was deallocated")
+    }
+    
     // MARK: - LIFE CYCLE
     
     override func loadView() {

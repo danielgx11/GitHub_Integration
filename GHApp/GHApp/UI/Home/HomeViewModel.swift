@@ -45,6 +45,10 @@ final class HomeViewModel: HomeViewModelProtocol {
         self.factory = factory
     }
     
+    deinit {
+        debugPrint("\(self) was deallocated")
+    }
+    
     // MARK: - PUBLIC METHODS
     
     func initState() {

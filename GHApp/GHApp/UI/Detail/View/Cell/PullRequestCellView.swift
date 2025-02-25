@@ -94,6 +94,8 @@ final class PullRequestCellView: UITableViewCell {
     @AutoLayoutUsage private var authorImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
+        imageView.layer.cornerRadius = Metrics.small
+        imageView.clipsToBounds = true
         imageView.setContentCompressionResistancePriority(.required, for: .vertical)
         imageView.setContentCompressionResistancePriority(.required, for: .horizontal)
         return imageView
@@ -154,11 +156,12 @@ final class PullRequestCellView: UITableViewCell {
     }
     
     private func updateProfile(with entity: ProfileEntity?) {
-        // TODO: load async image
-        
         authorNameLabel.text = entity?.name
         authorTypeLabel.text = entity?.type
-        authorImageView.image = .init(systemName: "person.circle")
+        
+        if let imageUrl = entity?.image {
+            authorImageView.loadRemoteImage(from: imageUrl, placeholder: .init(systemName: "person.circle"))
+        }
     }
 }
 

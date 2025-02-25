@@ -127,6 +127,8 @@ final class RepositoryCellView: UITableViewCell {
     @AutoLayoutUsage private var authorImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
+        imageView.layer.cornerRadius = Metrics.small
+        imageView.clipsToBounds = true
         imageView.setContentCompressionResistancePriority(.required, for: .vertical)
         imageView.setContentCompressionResistancePriority(.required, for: .horizontal)
         return imageView
@@ -176,10 +178,12 @@ final class RepositoryCellView: UITableViewCell {
     }
     
     private func updateProfile(with entity: ProfileEntity?) {
-        // TODO: load async image
-        
         authorNameLabel.text = entity?.name
         authorImageView.image = .init(systemName: "person.circle")
+        
+        if let imageUrl = entity?.image {
+            authorImageView.loadRemoteImage(from: imageUrl, placeholder: .init(systemName: "person.circle"))
+        }
     }
 }
 
@@ -218,6 +222,7 @@ extension RepositoryCellView {
         profileStackView.addArrangedSubview(authorNameLabel)
         
         authorImageView.width(Metrics.big)
+        authorImageView.height(Metrics.big)
         profileStackView.width(ViewMetrics.profileStackViewWidth)
         
         forksImageView.width(Metrics.medium)

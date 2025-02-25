@@ -36,6 +36,10 @@ public final class HomeViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        debugPrint("\(self) was deallocated")
+    }
+    
     // MARK: - LIFE CYCLE
     
     public override func loadView() {

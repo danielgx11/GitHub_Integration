@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIImageView {
-    func loadRemoteImage(from url: URL, placeholder: UIImage? = nil) {
+    public func loadRemoteImage(from url: URL, placeholder: UIImage? = nil) {
         self.image = placeholder
         
         if let cachedImage = ImageCache.shared.object(forKey: url as NSURL) {
